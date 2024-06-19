@@ -2,7 +2,7 @@ precio = 0
 kilos_totales = 0
 camiones = 0
 datos_personales = {}
-
+#definir obtener nombre
 def obtener_nombre():
     while True:
         nombre = input("Ingrese su nombre: ")
@@ -11,7 +11,7 @@ def obtener_nombre():
             return nombre
         else:
             print("Ingrese un nombre válido (más de 3 caracteres).")
-
+#definir obtener telefono
 def obtener_telefono():
     while True:
         telefono = input("Ingrese su teléfono: ")
@@ -19,8 +19,8 @@ def obtener_telefono():
             datos_personales["Teléfono"] = telefono
             return telefono
         else:
-            print("El teléfono debe tener entre 8 y 9 dígitos numéricos.")
-
+            print("El teléfono debe tener entre 8 y 9 dígitos numéricos, intente otra vez.")
+#definir camion estandar
 def camion_estandar():
     global precio, kilos_totales, camiones
     print("El camión estándar tiene un valor de $765.000 y contiene:")
@@ -39,8 +39,8 @@ def camion_estandar():
             else:
                 print("Debe seleccionar al menos 1 camión.")
         except ValueError:
-            print("Entrada inválida. Debe ingresar un número entero.")
-
+            print("Entrada inválida. Debe ingresar un número entero, intente otra vez.")
+#definir compra carga especifica
 def compra_carga_especifica():
     global kilos_totales, precio, camiones
     print("Ingrese la cantidad de cilindros que requiere:")
@@ -97,7 +97,7 @@ def menu():
             imprimir_boleta()
             print("Hasta pronto")
             return False
-
+#definir menu principal
 def menu_principal():
     obtener_nombre()
     obtener_telefono()
@@ -108,5 +108,5 @@ def menu_principal():
         if otro_pedido != 'si':
             print("Hasta pronto")
             break
-
+#llamada al menu principal
 menu_principal()
